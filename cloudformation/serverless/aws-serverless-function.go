@@ -12,6 +12,11 @@ import (
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
 type Function struct {
 
+	// Architectures AWS CloudFormation Property
+	// Required: false
+	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+	Architectures []string `json:"Architectures,omitempty"`
+
 	// AutoPublishAlias AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction

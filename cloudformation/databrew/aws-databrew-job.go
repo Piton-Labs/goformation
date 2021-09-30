@@ -13,6 +13,16 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html
 type Job struct {
 
+	// DataCatalogOutputs AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datacatalogoutputs
+	DataCatalogOutputs []Job_DataCatalogOutput `json:"DataCatalogOutputs,omitempty"`
+
+	// DatabaseOutputs AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-databaseoutputs
+	DatabaseOutputs []Job_DatabaseOutput `json:"DatabaseOutputs,omitempty"`
+
 	// DatasetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datasetname
@@ -31,7 +41,7 @@ type Job struct {
 	// JobSample AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample
-	JobSample interface{} `json:"JobSample,omitempty"`
+	JobSample *Job_JobSample `json:"JobSample,omitempty"`
 
 	// LogSubscription AWS CloudFormation Property
 	// Required: false
@@ -56,12 +66,17 @@ type Job struct {
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputlocation
-	OutputLocation interface{} `json:"OutputLocation,omitempty"`
+	OutputLocation *Job_OutputLocation `json:"OutputLocation,omitempty"`
 
 	// Outputs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputs
 	Outputs []Job_Output `json:"Outputs,omitempty"`
+
+	// ProfileConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-profileconfiguration
+	ProfileConfiguration *Job_ProfileConfiguration `json:"ProfileConfiguration,omitempty"`
 
 	// ProjectName AWS CloudFormation Property
 	// Required: false

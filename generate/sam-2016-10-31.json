@@ -17,6 +17,13 @@
                     "PrimitiveType": "String",
                     "UpdateType": "Immutable"
                 },
+                "Architectures": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction",
+                    "Required": false,
+                    "Type": "List",
+                    "PrimitiveItemType": "String",
+                    "UpdateType": "Immutable"
+                },
                 "CodeUri": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction",
                     "Required": true,
@@ -844,6 +851,7 @@
                         "KinesisEvent",
                         "DynamoDBEvent",
                         "ApiEvent",
+                        "HttpApiEvent",
                         "ScheduleEvent",
                         "CloudWatchEventEvent",
                         "CloudWatchLogsEvent",
@@ -960,42 +968,42 @@
                     "PrimitiveType": "Boolean",
                     "UpdateType": "Immutable"
                 },
-		"MaximumBatchingWindowInSeconds": {
+    "MaximumBatchingWindowInSeconds": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "PrimitiveType": "Integer",
                     "UpdateType": "Immutable"
-		},
-		"MaximumRetryAttempts": {
+    },
+    "MaximumRetryAttempts": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "PrimitiveType": "Integer",
                     "UpdateType": "Immutable"
-		},
-		"BisectBatchOnFunctionError": {
+    },
+    "BisectBatchOnFunctionError": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "PrimitiveType": "Boolean",
                     "UpdateType": "Immutable"
-		},
-		"MaximumRecordAgeInSeconds": {
+    },
+    "MaximumRecordAgeInSeconds": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "PrimitiveType": "Integer",
                     "UpdateType": "Immutable"
-		},
-		"DestinationConfig": {
+    },
+    "DestinationConfig": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "Type": "DestinationConfig",
                     "UpdateType": "Immutable"
-		},
-		"ParallelizationFactor": {
+    },
+    "ParallelizationFactor": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb",
                     "Required": false,
                     "PrimitiveType": "Integer",
                     "UpdateType": "Immutable"
-		}
+    }
             }
         },
         "AWS::Serverless::Function.SQSEvent": {
@@ -1038,6 +1046,41 @@
                 },
                 "RestApiId": {
                     "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api",
+                    "Required": false,
+                    "PrimitiveType": "String",
+                    "UpdateType": "Immutable"
+                }
+            }
+        },
+        "AWS::Serverless::Function.HttpApiEvent": {
+            "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
+            "Properties": {
+                "Path": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
+                    "Required": true,
+                    "PrimitiveType": "String",
+                    "UpdateType": "Immutable"
+                },
+                "Method": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
+                    "Required": true,
+                    "PrimitiveType": "String",
+                    "UpdateType": "Immutable"
+                },
+                "ApiId": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
+                    "Required": false,
+                    "PrimitiveType": "String",
+                    "UpdateType": "Immutable"
+                },
+                "TimeoutInMillis": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
+                    "Required": false,
+                    "PrimitiveType": "Integer",
+                    "UpdateType": "Immutable"
+                },
+                "PayloadFormatVersion": {
+                    "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi",
                     "Required": false,
                     "PrimitiveType": "String",
                     "UpdateType": "Immutable"
@@ -1130,7 +1173,7 @@
                 }
             }
         },
-	"AWS::Serverless::Function.DestinationConfig": {
+  "AWS::Serverless::Function.DestinationConfig": {
             "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object",
             "Properties": {
                 "OnFailure": {
@@ -1140,8 +1183,8 @@
                     "UpdateType": "Immutable"
                 }
             }
-	},
-	"AWS::Serverless::Function.OnFailure": {
+  },
+  "AWS::Serverless::Function.OnFailure": {
             "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object",
             "Properties": {
                 "Type": {
@@ -1157,7 +1200,7 @@
                     "UpdateType": "Immutable"
                 }
             }
-	},
+  },
         "AWS::Serverless::Function.EventBridgeRuleEvent": {
             "Documentation": "https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule",
             "Properties": {

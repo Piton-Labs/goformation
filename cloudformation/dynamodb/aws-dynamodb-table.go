@@ -23,6 +23,11 @@ type Table struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
 	BillingMode string `json:"BillingMode,omitempty"`
 
+	// ContributorInsightsSpecification AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-contributorinsightsspecification-enabled
+	ContributorInsightsSpecification *Table_ContributorInsightsSpecification `json:"ContributorInsightsSpecification,omitempty"`
+
 	// GlobalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi
