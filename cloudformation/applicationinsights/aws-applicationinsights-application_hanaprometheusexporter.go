@@ -9,22 +9,22 @@ import (
 type Application_HANAPrometheusExporter struct {
 
 	// AgreeToInstallHANADBClient AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-agreetoinstallhanadbclient
-	AgreeToInstallHANADBClient bool `json:"AgreeToInstallHANADBClient,omitempty"`
+	AgreeToInstallHANADBClient bool `json:"AgreeToInstallHANADBClient"`
 
 	// HANAPort AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanaport
 	HANAPort string `json:"HANAPort,omitempty"`
 
 	// HANASID AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasid
 	HANASID string `json:"HANASID,omitempty"`
 
 	// HANASecretName AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasecretname
 	HANASecretName string `json:"HANASecretName,omitempty"`
 

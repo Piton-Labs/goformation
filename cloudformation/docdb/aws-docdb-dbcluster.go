@@ -23,6 +23,11 @@ type DBCluster struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-backupretentionperiod
 	BackupRetentionPeriod int `json:"BackupRetentionPeriod,omitempty"`
 
+	// CopyTagsToSnapshot AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-copytagstosnapshot
+	CopyTagsToSnapshot bool `json:"CopyTagsToSnapshot,omitempty"`
+
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusteridentifier
@@ -59,12 +64,12 @@ type DBCluster struct {
 	KmsKeyId string `json:"KmsKeyId,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword
 	MasterUserPassword string `json:"MasterUserPassword,omitempty"`
 
 	// MasterUsername AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masterusername
 	MasterUsername string `json:"MasterUsername,omitempty"`
 

@@ -7,7 +7,7 @@ import (
 	"github.com/awslabs/goformation/v4/cloudformation/utils"
 )
 
-// Function_Properties is a helper struct that can hold either a S3Event, SNSEvent, SQSEvent, KinesisEvent, DynamoDBEvent, ApiEvent, HttpApiEvent, ScheduleEvent, CloudWatchEventEvent, CloudWatchLogsEvent, IoTRuleEvent, AlexaSkillEvent, or EventBridgeRuleEvent value
+// Function_Properties is a helper struct that can hold either a S3Event, SNSEvent, SQSEvent, KinesisEvent, DynamoDBEvent, ApiEvent, HttpApiEvent, ScheduleEvent, CloudWatchEventEvent, CloudWatchLogsEvent, IoTRuleEvent, AlexaSkillEvent, EventBridgeRuleEvent, or CognitoEvent value
 type Function_Properties struct {
 	S3Event              *Function_S3Event
 	SNSEvent             *Function_SNSEvent
@@ -22,6 +22,7 @@ type Function_Properties struct {
 	IoTRuleEvent         *Function_IoTRuleEvent
 	AlexaSkillEvent      *Function_AlexaSkillEvent
 	EventBridgeRuleEvent *Function_EventBridgeRuleEvent
+	CognitoEvent         *Function_CognitoEvent
 }
 
 func (r Function_Properties) value() interface{} {
@@ -79,6 +80,10 @@ func (r Function_Properties) value() interface{} {
 		ret = append(ret, *r.EventBridgeRuleEvent)
 	}
 
+	if r.CognitoEvent != nil {
+		ret = append(ret, *r.CognitoEvent)
+	}
+
 	sort.Sort(utils.ByJSONLength(ret)) // Heuristic to select best attribute
 	if len(ret) > 0 {
 		return ret[0]
@@ -130,6 +135,8 @@ func (r *Function_Properties) UnmarshalJSON(b []byte) error {
 		json.Unmarshal(b, &r.AlexaSkillEvent)
 
 		json.Unmarshal(b, &r.EventBridgeRuleEvent)
+
+		json.Unmarshal(b, &r.CognitoEvent)
 
 	case []interface{}:
 

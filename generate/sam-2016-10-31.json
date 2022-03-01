@@ -857,7 +857,8 @@
                         "CloudWatchLogsEvent",
                         "IoTRuleEvent",
                         "AlexaSkillEvent",
-                        "EventBridgeRuleEvent"
+                        "EventBridgeRuleEvent",
+                        "CognitoEvent"
                     ],
                     "UpdateType": "Immutable"
                 }
@@ -1227,6 +1228,27 @@
                     "Required": false,
                     "PrimitiveType": "String",
                     "UpdateType": "Immutable"
+                }
+            }
+        },
+        "AWS::Serverless::Function.CognitoEvent": {
+            "Documentation": "https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito",
+            "Properties": {
+                "UserPool": {
+                    "Documentation": "https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito",
+                    "Required": true,
+                    "PrimitiveType": "String",
+                    "UpdateType": "Immutable"
+                },
+                "Trigger": {
+                    "Documentation": "https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito",
+                    "Required": true,
+                    "PrimitiveTypes": [
+                        "String"
+                    ],
+                    "PrimitiveItemTypes": [
+                        "String"
+                    ]
                 }
             }
         },
