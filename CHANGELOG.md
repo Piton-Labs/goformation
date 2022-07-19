@@ -1,5 +1,12 @@
 # GoFormation Versioning Changelog
 
+## [4.9.3](https://github.com/pnwcode/goformation/compare/v4.9.2...v4.9.3) (2022-07-19)
+
+
+### Bug Fixes
+
+* **schema:** Cloudformation Updates ([e112375](https://github.com/Piton-Labs/goformation/commit/e1123755a7cb856ab40110ba4159572f2b26abee))
+
 ## [4.9.2](https://github.com/pnwcode/goformation/compare/v4.9.1...v4.9.2) (2022-07-19)
 
 
