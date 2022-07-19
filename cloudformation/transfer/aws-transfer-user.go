@@ -51,7 +51,7 @@ type User struct {
 	// SshPublicKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-sshpublickeys
-	SshPublicKeys []User_SshPublicKey `json:"SshPublicKeys,omitempty"`
+	SshPublicKeys []string `json:"SshPublicKeys,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
